@@ -1,7 +1,7 @@
 {
    "font_size": 10,
    "draw_white_space": "all",
-   "rulers": [80],
+   "rulers": false,
    "tab_size": 3,
    "translate_tabs_to_spaces": true,
    "highlight_modified_tabs": true,
