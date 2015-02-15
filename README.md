@@ -2,7 +2,7 @@
   
 General
 
-	sudo apt-get install chromium-browser vlc indicator-cpufreq thinkfan mc p7zip-full unrar-free htop
+	sudo apt-get install git chromium-browser vlc indicator-cpufreq thinkfan mc p7zip-full unrar-free htop
 
 Sublime
 
@@ -30,6 +30,6 @@ Node and apache
   
 Node pacs
 
-	sudo npm install -g grunt-cli
-	sudo npm install -g bower
-	sudo npm install -g yo
+	sudo npm install -g grunt-cli &&
+	sudo npm install -g bower &&
+	sudo npm install -g yo &&
