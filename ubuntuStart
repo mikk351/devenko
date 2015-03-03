@@ -37,4 +37,5 @@ sudo chmod -R 775 /home/$USER/kood
 
 
 #Git params
-git config --global user.email "mikk351@gmail.com"git config --global user.name "Your Name"
+git config --global user.email "mikk351@gmail.com"
+git config --global user.name "mikk351"
