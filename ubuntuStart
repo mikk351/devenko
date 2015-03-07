@@ -1,5 +1,5 @@
 #!/bin/bash
-
+kasutaja='lenovo'
 #General 
 sudo apt-get install git chromium-browser vlc indicator-cpufreq thinkfan mc p7zip-full unrar-free htop
 
@@ -31,9 +31,9 @@ sudo npm install -g yo
 sudo a2enmod rewrite
 sudo a2enmod userdir
 sudo service apache2 reload
-sudo adduser $USER www-data
-sudo chown -R www-data:www-data /home/$USER/kood
-sudo chmod -R 775 /home/$USER/kood
+sudo adduser $kasutaja www-data
+sudo chown -R www-data:www-data /home/$kasutaja/kood
+sudo chmod -R 775 /home/$kasutaja/kood
 
 
 #Git params
