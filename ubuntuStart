@@ -1,7 +1,7 @@
 #!/bin/bash
 kasutaja='lenovo'
 #General 
-sudo apt-get install git chromium-browser vlc indicator-cpufreq thinkfan mc p7zip-full unrar-free htop
+sudo apt-get install git chromium-browser vlc indicator-cpufreq thinkfan mc p7zip-full unrar-free htop conky-all lm-sensors
 
 #Python 2.x pacs 
 sudo apt-get install python-dev
