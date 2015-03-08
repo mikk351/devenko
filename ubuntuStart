@@ -20,7 +20,7 @@ sudo apt-get install spotify-client
 Node and apache
 
 #WebDev pack
-sudo apt-get install apache2 nodejs-legacy
+sudo apt-get install apache2 nodejs-legacy npm
 
 #Node pacs
 sudo npm install -g grunt-cli &&
