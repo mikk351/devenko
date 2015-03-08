@@ -19,7 +19,7 @@ Spotify
 
 Node and apache
   
-	sudo apt-get install apache2 nodejs-legacy
+	sudo apt-get install apache2 nodejs-legacy npm
   
 Node pacs
 
