@@ -23,9 +23,7 @@ Node and apache
 sudo apt-get install apache2 nodejs-legacy npm
 
 #Node pacs
-sudo npm install -g grunt-cli &&
-sudo npm install -g bower &&
-sudo npm install -g yo
+sudo npm install -g grunt grunt-cli bower yo generator-karma generator-angular
 
 #Rights
 sudo a2enmod rewrite
