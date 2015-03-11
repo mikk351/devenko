@@ -37,3 +37,7 @@ User rights
 	sudo adduser $USER www-data
 	sudo chown -R www-data:www-data /home/$USER/kood
 	sudo chmod -R 775 /home/$USER/kood
+
+Grunt ENOSPC error
+	
+	echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
