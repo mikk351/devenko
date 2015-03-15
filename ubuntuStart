@@ -17,9 +17,8 @@ sudo apt-add-repository -y "deb http://repository.spotify.com stable non-free" &
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 94558F59 &&
 sudo apt-get update -qq &&
 sudo apt-get install spotify-client
-Node and apache
 
-#WebDev pack
+#WebDev pack, Node and apache
 sudo apt-get install apache2 nodejs-legacy npm
 
 #Node pacs
