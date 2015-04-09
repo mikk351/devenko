@@ -26,14 +26,15 @@ sudo apt-get install apache2 nodejs-legacy npm
 sudo npm install -g grunt grunt-cli bower yo generator-karma generator-angular
 
 #Rights
+#Note to future self - home folder chmod 755
 sudo a2enmod rewrite
 sudo a2enmod userdir
 sudo service apache2 reload
 mkdir /home/$kasutaja/kood
 sudo adduser $kasutaja www-data
 sudo chown -R www-data:www-data /home/$kasutaja/kood
-sudo chmod -R 775 /home/$kasutaja/kood
-
+#sudo chmod -R 755 /home/$kasutaja/kood
+sudo chmod -R 755 /home
 
 #Git params
 git config --global user.email "mikk351@gmail.com"
