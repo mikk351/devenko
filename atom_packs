@@ -1,0 +1,7 @@
+#!/bin/bash
+sudo apm install emmet
+sudo apm install autocomplete-plus
+sudo apm install autocomplete-html
+sudo apm install javascript-snippets
+sudo apm install project-manager
+sudo apm install git-diff
