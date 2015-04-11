@@ -1,11 +1,11 @@
 #!/bin/bash
 kasutaja='lenovo'
 #General 
-sudo apt-get install git chromium-browser vlc indicator-cpufreq thinkfan mc p7zip-full unrar-free htop conky-all lm-sensors
+sudo apt-get install -y git chromium-browser vlc indicator-cpufreq thinkfan mc p7zip-full unrar-free htop conky-all lm-sensors
 
 #Python 2.x pacs 
-sudo apt-get install python-dev
-sudo apt-get install python-numpy python-scipy python-matplotlib ipython ipython-notebook python-pandas python-sympy python-nose python-tornado python-yaml
+sudo apt-get install -y python-dev
+sudo apt-get install -y python-numpy python-scipy python-matplotlib ipython ipython-notebook python-pandas python-sympy python-nose python-tornado python-yaml
 
 
 #Repos and update
@@ -13,14 +13,14 @@ sudo add-apt-repository ppa:webupd8team/sublime-text-3
 sudo apt-add-repository -y "deb http://repository.spotify.com stable non-free" 
 sudo apt-get update
 #Sublime
-sudo apt-get install sublime-text-installer
+sudo apt-get install -y sublime-text-installer
 
 #Spotify
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 94558F59 &&
-sudo apt-get install spotify-client
+sudo apt-get install -y spotify-client
 
 #WebDev pack, Node and apache
-sudo apt-get install apache2 nodejs-legacy npm
+sudo apt-get install -y apache2 nodejs-legacy npm
 
 #Node pacs
 sudo npm install -g grunt grunt-cli bower yo generator-karma generator-angular
