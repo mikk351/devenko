@@ -10,6 +10,6 @@ sudo apm install autocomplete-html
 sudo apm install javascript-snippets
 sudo apm install project-manager
 sudo apm install git-diff
-sudo apm install remember-session
+sudo apm install save-session
 
 sudo apm install monokai-seti
