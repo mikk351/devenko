@@ -4,12 +4,13 @@
 #sudo apt-get update
 #sudo apt-get install atom
 
-apm install emmet
-apm install autocomplete-plus
-apm install autocomplete-html
-apm install javascript-snippets
-apm install project-manager
-apm install git-diff
-apm install save-session
+apm install emmet &&
+apm install autocomplete-plus &&
+apm install autocomplete-html &&
+apm install javascript-snippets &&
+apm install project-manager &&
+apm install git-diff &&
+apm install save-session &&
+apm install highlight-selected &&
 
 apm install monokai-seti
