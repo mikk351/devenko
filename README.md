@@ -1,41 +1,43 @@
-#!/bin/bash
-kasutaja='lenovo'
-#General 
-sudo apt-get install -y git chromium-browser vlc indicator-cpufreq thinkfan mc p7zip-full unrar-free htop conky-all lm-sensors
+# devEnvConf
+  
+General
 
-#Python 2.x pacs 
-sudo apt-get install -y python-dev
-sudo apt-get install -y python-numpy python-scipy python-matplotlib ipython ipython-notebook python-pandas python-sympy python-nose python-tornado python-yaml
+	sudo apt-get install git chromium-browser vlc indicator-cpufreq thinkfan mc p7zip-full unrar-free htop
 
+Sublime
+    
+	sudo add-apt-repository ppa:webupd8team/sublime-text-3 &&
+	sudo apt-get update &&
+	sudo apt-get install sublime-text-installer
 
-#Repos and update
-sudo add-apt-repository ppa:webupd8team/sublime-text-3
-sudo apt-add-repository -y "deb http://repository.spotify.com stable non-free" 
-sudo apt-get update
-#Sublime
-sudo apt-get install -y sublime-text-installer
+Spotify
+  
+	sudo apt-add-repository -y "deb http://repository.spotify.com stable non-free" &&
+	sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 94558F59 &&
+	sudo apt-get update -qq &&
+	sudo apt-get install spotify-client
 
-#Spotify
-sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 94558F59 &&
-sudo apt-get install -y spotify-client
+Node and apache
+  
+	sudo apt-get install apache2 nodejs-legacy npm
+  
+Node pacs
 
-#WebDev pack, Node and apache
-sudo apt-get install -y apache2 nodejs-legacy npm
+	sudo npm install -g grunt-cli &&
+	sudo npm install -g bower &&
+	sudo npm install -g yo
 
-#Node pacs
-sudo npm install -g grunt grunt-cli bower yo generator-karma generator-angular
+User rights
 
-#Rights
-#Note to future self - home folder chmod 755 & chown www-data:www-data?
-sudo a2enmod rewrite
-sudo a2enmod userdir
-sudo service apache2 reload
-mkdir /home/$kasutaja/kood
-sudo adduser $kasutaja www-data
-sudo chown -R $kasutja:www-data /home/$kasutaja/kood
-#sudo chmod -R 755 /home/$kasutaja/kood
-sudo chmod -R 755 /home
+	#!/bin/bash
+	
+	sudo a2enmod rewrite
+	sudo a2enmod userdir
+	sudo service apache2 reload
+	sudo adduser $USER www-data
+	sudo chown -R www-data:www-data /home/$USER/kood
+	sudo chmod -R 775 /home/$USER/kood
 
-#Git params
-git config --global user.email "mikk351@gmail.com"
-git config --global user.name "mikk351"
+Grunt ENOSPC error
+	
+	echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
