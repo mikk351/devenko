@@ -13,4 +13,7 @@ apm install git-diff &&
 apm install save-session &&
 apm install highlight-selected &&
 
-apm install monokai-seti
+#themes
+apm install monokai-seti &&
+apm install seti-syntax &&
+apm install seti-ui
