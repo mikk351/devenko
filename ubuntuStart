@@ -8,15 +8,16 @@ sudo apt-get install -y python-dev
 sudo apt-get install -y python-numpy python-scipy python-matplotlib ipython ipython-notebook python-pandas python-sympy python-nose python-tornado python-yaml
 
 
-#Repos and update
+#Repos for sublime and spotify and update
 sudo add-apt-repository ppa:webupd8team/sublime-text-3
 sudo apt-add-repository -y "deb http://repository.spotify.com stable non-free" 
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 94558F59 &&
 sudo apt-get update
+
 #Sublime
 sudo apt-get install -y sublime-text-installer
 
 #Spotify
-sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 94558F59 &&
 sudo apt-get install -y spotify-client
 
 #WebDev pack, Node and apache
@@ -30,10 +31,11 @@ sudo npm install -g grunt grunt-cli bower yo generator-karma generator-angular
 sudo a2enmod rewrite
 sudo a2enmod userdir
 sudo service apache2 reload
+
 mkdir /home/$kasutaja/kood
 sudo adduser $kasutaja www-data
 sudo chown -R $kasutja:www-data /home/$kasutaja/kood
-#sudo chmod -R 755 /home/$kasutaja/kood
+sudo chmod -R 755 /home/$kasutaja/kood
 sudo chmod -R 755 /home
 
 #Git params
