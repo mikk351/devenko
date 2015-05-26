@@ -49,3 +49,6 @@ sudo add-apt-repository -y ppa:numix/ppa
 sudo apt-get update
 
 sudo apt-get install -y unity-tweak-tool plank numix-gtk-theme numix-icon-theme-circle 
+#Theme for gedit
+#gsettings set org.gnome.gedit.preferences.ui notebook-show-tabs-mode never #Hides tabs
+#https://gist.githubusercontent.com/LeoIannacone/71028cc3bce04567d77e/raw/7a9f77c9eabad2f9a08bce733ce8eb2586470fe8/monokai-exteded.xml
