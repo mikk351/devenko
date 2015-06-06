@@ -1,0 +1,2 @@
+'.editor':
+  'f12': 'atom-beautify:beautify-editor'
