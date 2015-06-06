@@ -11,6 +11,7 @@ apm install javascript-snippets &&
 apm install project-manager &&
 apm install git-diff &&
 apm install save-session &&
+apm install atom-beautify &&
 apm install highlight-selected &&
 
 #themes
