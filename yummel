@@ -8,9 +8,9 @@ dnf install -y python-devel numpy scipy python-matplotlib ipython python-pandas 
 -c 'yum install --nogpgcheck http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm'
 dnf install -y vlc p7zip
 
-#
+#WebDev
 dnf install -y nodejs npm httpd 
-#dnf install -y php php-mysql phpmyadmin mariadb mariadb-server
+dnf install -y php php-mysql phpmyadmin mariadb mariadb-server
 
 #Start services
 systemctl enable httpd
@@ -26,8 +26,7 @@ dnf install -y spotify-client
 #Install ATOM
 wget -O atomV1.rpm https://github.com/atom/atom/releases/download/v1.0.0/atom.x86_64.rpm
 dnf install -y atomV1.rpm
-
-
+rm atomV1.rpm
 
 #Install sublimeText3 from (https://gist.github.com/simonewebdesign/8507139)
 if [ "$(uname -m)" = "x86_64" ]; then
