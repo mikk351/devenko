@@ -1,0 +1,63 @@
+#!/bin/bash
+su
+dnf install -y mc htop git vim
+#Python packs
+dnf install -y python-devel numpy scipy python-matplotlib ipython python-pandas sympy python-nose python-tornado python-yaml python-pandas
+
+#RPM fusion
+-c 'yum install --nogpgcheck http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm'
+dnf install -y vlc p7zip
+
+#
+dnf install -y nodejs npm httpd 
+#dnf install -y php php-mysql phpmyadmin mariadb mariadb-server
+
+#Start services
+systemctl enable httpd
+systemctl start httpd
+
+#Install node packs
+npm install -g grunt grunt-cli bower yo generator-karma generator-angular
+
+#Spotify
+dnf config-manager --add-repo=http://negativo17.org/repos/fedora-spotify.repo
+dnf install -y spotify-client
+
+#Install ATOM
+wget -O atomV1.rpm https://github.com/atom/atom/releases/download/v1.0.0/atom.x86_64.rpm
+dnf install -y atomV1.rpm
+
+
+
+#Install sublimeText3 from (https://gist.github.com/simonewebdesign/8507139)
+if [ "$(uname -m)" = "x86_64" ]; then
+  ARCHITECTURE="x64"
+else
+  ARCHITECTURE="x32"
+fi
+ 
+# Fetch the latest build version number (thanks daveol)
+BUILD=$(echo $(curl http://www.sublimetext.com/3) | sed -rn "s#.*The latest build is ([0-9]+)..*#\1#p")
+ 
+URL="http://c758482.r82.cf2.rackcdn.com/sublime_text_3_build_{$BUILD}_{$ARCHITECTURE}.tar.bz2"
+INSTALLATION_DIR="/opt/sublime_text"
+ 
+ 
+# Download the tarball, unpack and install
+curl -o $HOME/st3.tar.bz2 $URL
+if tar -xf $HOME/st3.tar.bz2 --directory=$HOME; then
+  # Remove the installation folder and the symlink, they might already exist
+  sudo rm -rf $INSTALLATION_DIR /bin/subl
+  sudo mv $HOME/sublime_text_3 $INSTALLATION_DIR
+  sudo ln -s $INSTALLATION_DIR/sublime_text /bin/subl
+fi
+rm $HOME/st3.tar.bz2
+ 
+ 
+# Package Control - The Sublime Text Package Manager: https://sublime.wbond.net
+curl -o $HOME/Package\ Control.sublime-package https://sublime.wbond.net/Package%20Control.sublime-package
+sudo mv $HOME/Package\ Control.sublime-package "$INSTALLATION_DIR/Packages/"
+ 
+ 
+# Add to applications list (thanks 4ndrej)
+sudo ln -s $INSTALLATION_DIR/sublime_text.desktop /usr/share/applications/sublime_text.desktop
