@@ -14,6 +14,9 @@ sudo dnf install -y vlc p7zip unrar p7zip firefox
 sudo dnf install -y nodejs npm httpd 
 sudo dnf install -y php php-mysql phpmyadmin mariadb mariadb-server
 
+#Fonts!
+sudo dnf install dejavu-sans-mono-fonts google-droid-sans-mono-fonts mozilla-fira-mono-fonts adobe-source-code-pro-fonts levien-inconsolata-fonts
+
 #Start services
 sudo systemctl enable httpd
 sudo systemctl start httpd
