@@ -1,31 +1,33 @@
 #!/bin/bash
-su
-dnf install -y mc htop git vim
+sudo dnf install -y mc htop git vim wget
 #Python packs
-dnf install -y python-devel numpy scipy python-matplotlib ipython python-pandas sympy python-nose python-tornado python-yaml python-pandas
+sudo dnf install -y python-devel numpy scipy python-matplotlib ipython python-pandas sympy python-nose python-tornado python-yaml python-pandas
 
 #RPM fusion
--c 'yum install --nogpgcheck http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm'
-dnf install -y vlc p7zip
+su -c 'yum install --nogpgcheck http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm'
+sudo dnf install -y vlc p7zip unrar p7zip firefox
+
+#Fedy
+#su -c "curl https://satya164.github.io/fedy/fedy-installer -o fedy-installer && chmod +x fedy-installer && ./fedy-installer"
 
 #WebDev
-dnf install -y nodejs npm httpd 
-dnf install -y php php-mysql phpmyadmin mariadb mariadb-server
+sudo dnf install -y nodejs npm httpd 
+sudo dnf install -y php php-mysql phpmyadmin mariadb mariadb-server
 
 #Start services
-systemctl enable httpd
-systemctl start httpd
+sudo systemctl enable httpd
+sudo systemctl start httpd
 
 #Install node packs
-npm install -g grunt grunt-cli bower yo generator-karma generator-angular
+sudo npm install -g grunt grunt-cli bower yo generator-karma generator-angular
 
 #Spotify
-dnf config-manager --add-repo=http://negativo17.org/repos/fedora-spotify.repo
-dnf install -y spotify-client
+sudo dnf config-manager --add-repo=http://negativo17.org/repos/fedora-spotify.repo
+sudo dnf install -y spotify-client
 
 #Install ATOM
 wget -O atomV1.rpm https://github.com/atom/atom/releases/download/v1.0.0/atom.x86_64.rpm
-dnf install -y atomV1.rpm
+sudo dnf install -y atomV1.rpm
 rm atomV1.rpm
 
 #Install sublimeText3 from (https://gist.github.com/simonewebdesign/8507139)
@@ -59,4 +61,4 @@ sudo mv $HOME/Package\ Control.sublime-package "$INSTALLATION_DIR/Packages/"
  
  
 # Add to applications list (thanks 4ndrej)
-sudo ln -s $INSTALLATION_DIR/sublime_text.desktop /usr/share/applications/sublime_text.desktop
+sudo ln -s $INSTALLATION_DIR/sublime_text.desktop /usr/share/applications/sublime_text.desktop 
