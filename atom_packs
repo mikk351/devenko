@@ -15,6 +15,7 @@ apm install atom-beautify &&
 apm install highlight-selected &&
 apm install linter-jshint &&
 apm install atom-ternjs &&
+apm install minimap &&
 
 #themes
 apm install monokai-seti &&
