@@ -13,6 +13,8 @@ apm install git-diff &&
 apm install save-session &&
 apm install atom-beautify &&
 apm install highlight-selected &&
+apm install linter-jshint &&
+apm install atom-ternjs &&
 
 #themes
 apm install monokai-seti &&
