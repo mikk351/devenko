@@ -3,6 +3,10 @@ sudo dnf install -y mc htop git vim wget
 #Python packs
 sudo dnf install -y python-devel numpy scipy python-matplotlib ipython python-pandas sympy python-nose python-tornado python-yaml python-pandas
 
+#mongoDB
+sudo dnf config-manager --add-repo https://repo.mongodb.org/yum/redhat/7/mongodb-org/3.0/x86_64/
+sudo dnf install -y mongodb-org
+
 #RPM fusion
 su -c 'yum install --nogpgcheck http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm'
 sudo dnf install -y vlc p7zip unrar p7zip firefox
