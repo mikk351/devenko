@@ -1,10 +1,10 @@
 #!/bin/bash
 kasutaja='lenovo'
 #General 
-sudo apt-get install -y git chromium-browser vlc tilda mc p7zip-full unrar-free htop conky-all lm-sensors #indicator-cpufreq thinkfan
+sudo apt-get install -y git chromium-browser vlc tilda mc p7zip-full unrar-free htop conky-all lm-sensors byobu #indicator-cpufreq thinkfan
 
 #Python 2.x pacs 
-sudo apt-get install -y python-dev
+sudo apt-get install -y python-dev python-pip
 sudo apt-get install -y python-numpy python-scipy python-matplotlib ipython ipython-notebook python-pandas python-sympy python-nose python-tornado python-yaml
 
 
