@@ -16,6 +16,7 @@ apm install highlight-selected &&
 apm install linter-jshint &&
 apm install atom-ternjs &&
 apm install minimap &&
+apm install autocomplete-python &&
 
 #themes
 apm install monokai-seti &&
