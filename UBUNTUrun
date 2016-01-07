@@ -73,6 +73,8 @@ ssh-keygen -t rsa -b 4096 -C "mikk351@gmail.com" &&
 eval "$(ssh-agent -s)" && ssh-add ~/.ssh/id_rsa &&
 xclip -sel clip < ~/.ssh/id_rsa.pub
 
+read -rsp $'SSH key copied to clipboard. Add it to github and press any key to continue. \n' -n1 key
+
 mkdir ~/kood && cd ~/kood
 git clone git@github.com:CCFFT/PyCalc-Backend.git &&
 git clone git@github.com:CCFFT/PyCalc-Frontend.git &&
