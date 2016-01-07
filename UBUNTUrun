@@ -1,13 +1,11 @@
 #!/bin/bash
 kasutaja=$USER
 sudo adduser $kasutaja www-data
-
-
+####################################################################################################################
 
 #General 
 sudo apt-get install -y xclip git chromium-browser vlc tilda mc p7zip-full unrar-free htop conky-all lm-sensors byobu nautilus-open-terminal #indicator-cpufreq thinkfan
-
-
+####################################################################################################################
 
 #Add repos
 #Themes and docky
@@ -24,16 +22,14 @@ echo "deb http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.2 multiverse" 
 
 sudo apt-get update &&
 sudo apt-get install -y atom sublime-text-installer spotify-client
-
-
+####################################################################################################################
 
 #install python
 sudo apt-get install -y python-dev libffi-devel build-essential python-pip &&
 sudo pip install tornado numpy scipy pymongo pyyaml python-slugify pyexcel_ods3 python-magic requests PyJWT colorlog pyzmq jinja2 #cryptography
 #or
 # sudo apt-get install -y python-numpy python-scipy python-matplotlib ipython ipython-notebook python-pandas python-sympy python-nose python-tornado python-yaml
-
-
+####################################################################################################################
 
 #WebDev pack apache
 sudo apt-get install -y apache2 &&
@@ -47,7 +43,7 @@ sudo npm install -g grunt grunt-cli bower yo generator-karma generator-angular
 #MongoDB
 sudo apt-get install -y mongodb-org &&
 sudo service mongod start
-
+####################################################################################################################
 
 #Look and feel
 sudo apt-get install -y unity-tweak-tool plank numix-gtk-theme numix-icon-theme-circle gnome-tweak-tool &&
@@ -64,12 +60,12 @@ Name[en_US]=plank
 Name=plank
 Comment[en_US]=
 Comment=' > /home/server/.config/autostart/plank.desktop
-
+####################################################################################################################
 
 #Theme for gedit
 gsettings set org.gnome.gedit.preferences.ui notebook-show-tabs-mode never && #Hides tabs
 sudo wget https://gist.githubusercontent.com/LeoIannacone/71028cc3bce04567d77e/raw/7a9f77c9eabad2f9a08bce733ce8eb2586470fe8/monokai-exteded.xml -P /usr/share/gtksourceview-3.0/styles
-
+####################################################################################################################
 
 #Set up git and clone repos
 git config --global user.email "mikk351@gmail.com" &&
@@ -86,3 +82,4 @@ git clone git@bitbucket.org:mikkk/backend.git
 
 cd ~/kood/PyCalc-Frontend && npm install && bower install &&
 cd ~/kood/frontend && npm install && bower install
+####################################################################################################################
