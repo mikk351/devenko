@@ -4,7 +4,7 @@ sudo adduser $kasutaja www-data
 ####################################################################################################################
 
 #General 
-sudo apt-get install -y xclip git chromium-browser vlc tilda mc p7zip-full unrar-free htop conky-all lm-sensors byobu nautilus-open-terminal #indicator-cpufreq thinkfan
+sudo apt-get install -y shutter xclip git chromium-browser vlc tilda mc p7zip-full unrar-free htop conky-all lm-sensors byobu nautilus-open-terminal #indicator-cpufreq thinkfan
 ####################################################################################################################
 
 #Add repos
