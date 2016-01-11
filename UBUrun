@@ -27,7 +27,7 @@ sudo service mongod start
 ####################################################################################################################
 
 #install python
-sudo apt-get install -y python-dev libffi-devel build-essential python-pip &&
+sudo apt-get install -y python-dev libffi-dev build-essential python-pip &&
 sudo pip install tornado numpy scipy pymongo pyyaml python-slugify pyexcel_ods3 python-magic requests PyJWT colorlog pyzmq jinja2 #cryptography
 #or
 # sudo apt-get install -y python-numpy python-scipy python-matplotlib ipython ipython-notebook python-pandas python-sympy python-nose python-tornado python-yaml
