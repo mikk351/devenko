@@ -27,7 +27,8 @@ echo "deb https://apt.dockerproject.org/repo ubuntu-trusty main" | sudo tee /etc
 sudo apt-get update &&
 sudo apt-get install -y atom sublime-text-installer spotify-client mongodb-org &&
 sudo apt-get install -y linux-image-extra-$(uname -r) docker-engine && #Docker - The linux-image-extra package allows you use the aufs storage driver.
-sudo service mongod start
+sudo service mongod start &&
+sudo service docker start 
 ####################################################################################################################
 
 #install python and other dev packs
