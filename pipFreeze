@@ -1,98 +1,98 @@
-pip install MySQL-python &&
-pip install PAM &&
-pip install Pillow &&
-pip install PyJWT &&
-pip install Twisted-Core &&
-pip install Twisted-Web &&
-pip install XlsxWriter &&
-pip install adium-theme-ubuntu &&
-pip install apt-xapian-index &&
-pip install argparse &&
-pip install boto &&
-pip install cffi &&
-pip install chardet &&
-pip install colorama &&
-pip install coloredlogs &&
-pip install colorlog &&
-pip install command-not-found &&
-pip install configobj &&
-pip install cryptography &&
-pip install debtagshw &&
-pip install decorator &&
-pip install defer &&
-pip install dirspec &&
-pip install dnspython &&
-pip install duplicity &&
-pip install enum34 &&
-pip install ezodf &&
-pip install f.lux-indicator-applet &&
-pip install funcsigs &&
-pip install greenlet &&
-pip install gyp &&
-pip install html5lib &&
-pip install httplib2 &&
-pip install humanfriendly &&
-pip install idna &&
-pip install ipaddress &&
-pip install ipython &&
-pip install ipython-genutils &&
-pip install lockfile &&
-pip install lxml &&
-pip install mate-menu &&
-pip install mate-tweak &&
-pip install matplotlib &&
-pip install mercurial &&
-pip install mock &&
-pip install motor &&
-pip install netifaces &&
-pip install nose &&
-pip install numpy &&
-pip install oauthlib &&
-pip install oneconf &&
-pip install pandas &&
-pip install path.py &&
-pip install pbr &&
-pip install pexpect &&
-pip install pickleshare &&
-pip install piston-mini-client &&
-pip install pyOpenSSL &&
-pip install pyasn1 &&
-pip install pycparser &&
-pip install pycrypto &&
-pip install pycups &&
-pip install pyexcel-io &&
-pip install pyexcel-ods3 &&
-pip install pygobject &&
-pip install pymongo &&
-pip install pyparsing &&
-pip install pyserial &&
-pip install pysmbc &&
-pip install python-apt &&
-pip install python-cloudfiles &&
-pip install python-dateutil &&
-pip install python-debian &&
-pip install python-magic &&
-pip install python-xlib &&
-pip install pytz &&
-pip install pyxdg &&
-pip install reportlab &&
-pip install requests &&
-pip install scipy &&
-pip install sessioninstaller &&
-pip install simplegeneric &&
-pip install six &&
-pip install slugify &&
-pip install software-center-aptd-plugins &&
-pip install ssh-import-id &&
-pip install sympy &&
-pip install system-service &&
-pip install tornado &&
-pip install traitlets &&
-pip install unity-lens-photos &&
-pip install urllib3 &&
-pip install wheel &&
-pip install wsgiref &&
-pip install xdiagnose &&
-pip install xlrd &&
-pip install xlwt &&
-pip install zope.interface
+sudo pip install MySQL-python &&
+sudo pip install PAM &&
+sudo pip install Pillow &&
+sudo pip install PyJWT &&
+sudo pip install Twisted-Core &&
+sudo pip install Twisted-Web &&
+sudo pip install XlsxWriter &&
+sudo pip install adium-theme-ubuntu &&
+sudo pip install apt-xapian-index &&
+sudo pip install argparse &&
+sudo pip install boto &&
+sudo pip install cffi &&
+sudo pip install chardet &&
+sudo pip install colorama &&
+sudo pip install coloredlogs &&
+sudo pip install colorlog &&
+sudo pip install command-not-found &&
+sudo pip install configobj &&
+sudo pip install cryptography &&
+sudo pip install debtagshw &&
+sudo pip install decorator &&
+sudo pip install defer &&
+sudo pip install dirspec &&
+sudo pip install dnspython &&
+sudo pip install duplicity &&
+sudo pip install enum34 &&
+sudo pip install ezodf &&
+sudo pip install f.lux-indicator-applet &&
+sudo pip install funcsigs &&
+sudo pip install greenlet &&
+sudo pip install gyp &&
+sudo pip install html5lib &&
+sudo pip install httplib2 &&
+sudo pip install humanfriendly &&
+sudo pip install idna &&
+sudo pip install ipaddress &&
+sudo pip install ipython &&
+sudo pip install ipython-genutils &&
+sudo pip install lockfile &&
+sudo pip install lxml &&
+sudo pip install mate-menu &&
+sudo pip install mate-tweak &&
+sudo pip install matplotlib &&
+sudo pip install mercurial &&
+sudo pip install mock &&
+sudo pip install motor &&
+sudo pip install netifaces &&
+sudo pip install nose &&
+sudo pip install numpy &&
+sudo pip install oauthlib &&
+sudo pip install oneconf &&
+sudo pip install pandas &&
+sudo pip install path.py &&
+sudo pip install pbr &&
+sudo pip install pexpect &&
+sudo pip install pickleshare &&
+sudo pip install piston-mini-client &&
+sudo pip install pyOpenSSL &&
+sudo pip install pyasn1 &&
+sudo pip install pycparser &&
+sudo pip install pycrypto &&
+sudo pip install pycups &&
+sudo pip install pyexcel-io &&
+sudo pip install pyexcel-ods3 &&
+sudo pip install pygobject &&
+sudo pip install pymongo &&
+sudo pip install pyparsing &&
+sudo pip install pyserial &&
+sudo pip install pysmbc &&
+sudo pip install python-apt &&
+sudo pip install python-cloudfiles &&
+sudo pip install python-dateutil &&
+sudo pip install python-debian &&
+sudo pip install python-magic &&
+sudo pip install python-xlib &&
+sudo pip install pytz &&
+sudo pip install pyxdg &&
+sudo pip install reportlab &&
+sudo pip install requests &&
+sudo pip install scipy &&
+sudo pip install sessioninstaller &&
+sudo pip install simplegeneric &&
+sudo pip install six &&
+sudo pip install slugify &&
+sudo pip install software-center-aptd-plugins &&
+sudo pip install ssh-import-id &&
+sudo pip install sympy &&
+sudo pip install system-service &&
+sudo pip install tornado &&
+sudo pip install traitlets &&
+sudo pip install unity-lens-photos &&
+sudo pip install urllib3 &&
+sudo pip install wheel &&
+sudo pip install wsgiref &&
+sudo pip install xdiagnose &&
+sudo pip install xlrd &&
+sudo pip install xlwt &&
+sudo pip install zope.interface &&
