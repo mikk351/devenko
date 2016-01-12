@@ -39,7 +39,7 @@ sudo usermod -aG docker $USER
 ####################################################################################################################
 
 #install python and other dev packs
-sudo apt-get install -y libblas-dev liblapack-dev libatlas-base-dev gfortran python-dev build-essential python-pip &&
+sudo apt-get install -y libblas-dev liblapack-dev libatlas-base-dev gfortran libxml2-dev libxslt1-dev libxslt1.1 python-dev build-essential python-pip &&
 sudo pip install tornado numpy scipy pymongo pyyaml python-slugify pyexcel_ods3 python-magic requests PyJWT colorlog pyzmq jinja2 #cryptography
 #or
 # sudo apt-get install -y python-numpy python-scipy python-matplotlib ipython ipython-notebook python-pandas python-sympy python-nose python-tornado python-yaml
