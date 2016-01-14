@@ -108,3 +108,9 @@ git clone git@bitbucket.org:mikkk/backend.git
 cd ~/kood/PyCalc-Frontend && npm install && bower install &&
 cd ~/kood/frontend && npm install && bower install
 ####################################################################################################################
+
+#Setting up backup
+#Lista all settings
+#gsettings list-recursively org.gnome.DejaDup
+# NOT TESTED!!!
+#gsettings set org.gnome.DejaDup exclude-list ['$TRASH', '$DOWNLOAD', '/home/$USER/deja-dup', '/home/$USER/sshMasin', '/home/$USER/kood/aAdmin/node_modules', '/home/$USER/kood/PyCalc-Frontend/node_modules', '/home/$USER/kood/Frontend/node_modules', '/home/$USER/kood/metarad/node_modules', '/home/$USER/kood/oscm/node_modules', '/home/$USER/.atom/.apm', '/home/$USER/.adobe', '/home/$USER/.atom', '/home/$USER/.java', '/home/$USER/.macromedia', '/home/$USER/.node-gyp', '/home/$USER/.npm', '/home/$USER/.rvm', '/home/$USER/.cache/dconf', '/home/$USER/.dbus', '/home/$USER/.gvfs']
