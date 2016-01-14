@@ -73,6 +73,16 @@ Name[en_US]=plank
 Name=plank
 Comment[en_US]=
 Comment=' > /home/$USER/.config/autostart/plank.desktop
+echo '[Desktop Entry]
+Type=Application
+Exec=tilda
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en_US]=tilda
+Name=tilda
+Comment[en_US]=tilda
+Comment=tilda' > /home/$USER/.config/autostart/tilda.desktop
 ####################################################################################################################
 
 #Theme for gedit
