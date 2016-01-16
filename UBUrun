@@ -38,6 +38,10 @@ sudo service docker start
 sudo usermod -aG docker $USER 
 ####################################################################################################################
 
+#Spotify icon fix
+#sh -c "$(wget https://raw.githubusercontent.com/faviouz/fix-spotify-icon/master/install.sh -O -)"
+#fix-spotify-icon
+
 #install python and other dev packs
 sudo apt-get install -y libblas-dev liblapack-dev libatlas-base-dev gfortran libxml2-dev libxslt1-dev libxslt1.1 python-dev build-essential python-pip &&
 sudo pip install tornado numpy scipy pymongo pyyaml python-slugify pyexcel_ods3 python-magic requests PyJWT colorlog pyzmq jinja2 #cryptography
