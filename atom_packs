@@ -20,6 +20,8 @@ apm install autocomplete-python &&
 
 #themes
 apm install monokai-seti &&
+apm install atom-material-syntax-dark &&
+apm install atom-material-syntax-dark &&
 apm install seti-syntax &&
 apm install seti-ui
 
