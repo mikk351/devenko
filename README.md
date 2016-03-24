@@ -11,4 +11,5 @@ Grunt ENOSPC error
 
 
 git config --global alias.force-pull '!git fetch --all && git reset --hard origin/master'
+
 git config --global alias.a '!git add -A && git commit'
