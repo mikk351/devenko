@@ -1,5 +1,5 @@
 #!/bin/bash
-sudo dnf install -y mc htop git vim wget
+sudo dnf install -y mc htop git vim wget libnatpmp
 #Python packs
 sudo dnf install -y python-devel numpy scipy python-matplotlib ipython python-pandas sympy python-nose python-tornado python-yaml python-pandas
 
