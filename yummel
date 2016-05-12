@@ -1,5 +1,11 @@
 #!/bin/bash
-sudo dnf install -y mc htop git vim wget libnatpmp nautilus-open-terminal
+sudo dnf install -y mc htop git vim wget libnatpmp nautilus-open-terminal xclip
+
+#Set ssh key
+ssh-keygen -t rsa -b 4096 -C "mikk351@gmail.com"
+ssh-add ~/.ssh/id_rsa
+eval "$(ssh-agent -s)"
+
 #Python packs
 sudo dnf install -y python-devel numpy scipy python-matplotlib ipython python-pandas sympy python-nose python-tornado python-yaml python-pandas
 
