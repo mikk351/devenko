@@ -13,3 +13,5 @@ Grunt ENOSPC error
 git config --global alias.force-pull '!git fetch --all && git reset --hard origin/master'
 
 git config --global alias.a '!git add -A && git commit'
+
+ulimit -v 4000000 # Ubuntu memory full freez fix
