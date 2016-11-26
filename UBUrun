@@ -68,7 +68,7 @@ sudo service apache2 reload &&
 #Node 5
 curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash - &&
 sudo apt-get install -y nodejs &&
-sudo npm install -g grunt grunt-cli bower yo generator-karma generator-angular
+sudo npm install -g grunt grunt-cli bower yo karma-cli generator-karma generator-angular
 ####################################################################################################################
 
 #Look and feel
