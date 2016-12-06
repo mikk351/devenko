@@ -1,0 +1,107 @@
+#!/bin/bash
+
+sudo adduser $USER www-data
+sudo ufw enable
+
+#General 
+####################################################################################################################
+sudo apt-get install -y fail2ban shutter xclip git chromium-browser vlc tilda mc p7zip-full unrar-free htop byobu
+#sudo apt-get install  indicator-cpufreq thinkfan lm-sensors #for laptop, problems with FAN!
+#sudo apt-get install nautilus-open-terminal #ubuntu 14.04
+
+
+#WGETS
+####################################################################################################################
+
+#Install ID card
+wget https://installer.id.ee/media/install-scripts/install-open-eid.sh &&
+chmod +x install-open-eid.sh &&
+./install-open-eid.sh &&
+rm install-open-eid.sh
+
+#Google chrome
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb &&
+sudo dpkg -i --force-depends google-chrome-stable_current_amd64.deb &&
+rm google-chrome-stable_current_amd64.deb &&
+sudo apt-get -f install
+
+
+#Add repos
+####################################################################################################################
+#Themes and docky
+sudo add-apt-repository -y ppa:ricotz/docky &&
+sudo add-apt-repository -y ppa:numix/ppa &&
+#Atom and Sublime
+sudo add-apt-repository -y ppa:webupd8team/atom &&
+sudo add-apt-repository -y ppa:webupd8team/sublime-text-3 &&
+#Spotify
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys BBEBDCB318AD50EC6865090613B00F1FD2C19886 &&
+echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sources.list.d/spotify.list &&
+#MongoDB
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927 &&
+sudo apt-add-repository 'deb http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 multiverse' &&
+#Docker
+sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D &&
+sudo apt-add-repository 'deb https://apt.dockerproject.org/repo ubuntu-xenial main' &&
+
+sudo apt-get update &&
+sudo apt-get install -y atom sublime-text-installer spotify-client mongodb-org &&
+sudo apt-get install -y linux-image-extra-$(uname -r) docker-engine && #Docker - The linux-image-extra package allows you use the aufs storage driver.
+sudo service mongod start &&
+sudo service docker start &&
+sudo usermod -aG docker $USER
+
+
+#install python
+####################################################################################################################
+sudo apt-get install -y libblas-dev liblapack-dev libatlas-base-dev gfortran libxml2-dev libxslt1-dev libxslt1.1 python-dev build-essential python-pip python3-dev python3-pip &&
+pip completion --bash >> ~/.bashrc && source ~/.bashrc &&
+sudo pip install --upgrade pip && sudo pip3 install --upgrade pip &&
+sudo pip install tornado numpy scipy pymongo pyyaml python-slugify pyexcel_ods3 xlrd python-magic requests PyJWT colorlog pyzmq jinja2 && #cryptography
+sudo pip3 install tornado requests numpy xlrd jwt
+#sudo apt-get install virtualenv
+#sudo pip3 install --user virtualenvwrapper
+#echo "export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3" >> ~/.bashrc
+#or
+# sudo apt-get install -y python-numpy python-scipy python-matplotlib ipython ipython-notebook python-pandas python-sympy python-nose python-tornado python-yaml
+#All the things!
+#sudo apt-get install build-essential autoconf libtool pkg-config python-opengl python-imaging python-pyrex python-pyside.qtopengl idle-python2.7 qt4-dev-tools qt4-designer libqtgui4 libqtcore4 libqt4-xml libqt4-test libqt4-script libqt4-network libqt4-dbus python-qt4 python-qt4-gl libgle3 python-dev
+
+
+
+#WebDev packs
+####################################################################################################################
+#NodeJS
+sudo apt-get install -y nodejs npm &&
+sudo ln -s /usr/bin/nodejs /usr/bin/node &&
+sudo npm install -g grunt grunt-cli bower yo karma-cli generator-karma generator-angular http-server
+#LEMP 
+sudo apt-get install -y nginx mysql-server php-fpm php-mysql
+
+
+#Look and feel
+####################################################################################################################
+sudo apt-get install -y unity-tweak-tool plank numix-gtk-theme numix-icon-theme-circle gnome-tweak-tool &&
+gsettings set org.gnome.desktop.interface gtk-theme 'Numix' &&
+gsettings set org.gnome.desktop.interface icon-theme 'Numix-Circle' &&
+
+
+
+#Set up git and clone repos
+####################################################################################################################
+git config --global user.email "mikk351@gmail.com" &&
+git config --global user.name "mikk351" &&
+ssh-keygen -t rsa -b 4096 -C "mikk351@gmail.com" &&
+eval "$(ssh-agent -s)" && ssh-add ~/.ssh/id_rsa &&
+xclip -sel clip < ~/.ssh/id_rsa.pub
+
+read -rsp $'SSH key copied to clipboard. Add it to github and press any key to continue. \n' -n1 key
+
+
+
+#Setting up backup
+####################################################################################################################
+#Lista all settings
+#gsettings list-recursively org.gnome.DejaDup
+# NOT TESTED!!!
+#gsettings set org.gnome.DejaDup exclude-list ['$TRASH', '$DOWNLOAD', '/home/$USER/deja-dup', '/home/$USER/sshMasin', '/home/$USER/kood/aAdmin/node_modules', '/home/$USER/kood/PyCalc-Frontend/node_modules', '/home/$USER/kood/Frontend/node_modules', '/home/$USER/kood/metarad/node_modules', '/home/$USER/kood/oscm/node_modules', '/home/$USER/.atom/.apm', '/home/$USER/.adobe', '/home/$USER/.atom', '/home/$USER/.java', '/home/$USER/.macromedia', '/home/$USER/.node-gyp', '/home/$USER/.npm', '/home/$USER/.rvm', '/home/$USER/.cache/dconf', '/home/$USER/.dbus', '/home/$USER/.gvfs']
