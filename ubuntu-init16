@@ -5,7 +5,7 @@ sudo ufw enable
 
 #General 
 ####################################################################################################################
-sudo apt-get install -y fail2ban shutter xclip git chromium-browser vlc tilda mc p7zip-full unrar-free htop byobu
+sudo apt-get install -y fail2ban shutter xclip git chromium-browser vlc tilda mc p7zip-full unrar-free htop byobu sshfs
 #sudo apt-get install  indicator-cpufreq thinkfan lm-sensors #for laptop, problems with FAN!
 #sudo apt-get install nautilus-open-terminal #ubuntu 14.04
 
