@@ -4,19 +4,10 @@
 #sudo apt-get update
 #sudo apt-get install atom
 
-apm install emmet &&
-apm install autocomplete-plus &&
-apm install autocomplete-html &&
 apm install javascript-snippets &&
-apm install project-manager &&
-apm install git-diff &&
 apm install save-session &&
 apm install atom-beautify &&
 apm install highlight-selected &&
-apm install linter-jshint &&
-apm install atom-ternjs &&
-apm install minimap &&
-apm install autocomplete-python &&
 
 #themes
 apm install monokai-seti &&
@@ -58,4 +49,5 @@ echo '{
 }' > /home/$USER/.atom/packages/atom-beautify/src/.jsbeautifyrc
 
 echo "'.editor':
-  'f12': 'atom-beautify:beautify-editor'" > /home/$USER/.atom/keymap.cson
+  'f12': 'atom-beautify:beautify-editor'" > /home/$USER/.atom/keymap.cson 
+
