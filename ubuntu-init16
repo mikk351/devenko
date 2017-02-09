@@ -57,8 +57,7 @@ sudo usermod -aG docker $USER
 sudo apt-get install -y libblas-dev liblapack-dev libatlas-base-dev gfortran libxml2-dev libxslt1-dev libxslt1.1 python-dev build-essential python-pip python3-dev python3-pip &&
 pip completion --bash >> ~/.bashrc && source ~/.bashrc &&
 sudo pip install --upgrade pip && sudo pip3 install --upgrade pip &&
-sudo pip install tornado numpy scipy pymongo pyyaml python-slugify pyexcel_ods3 xlrd python-magic requests PyJWT colorlog pyzmq jinja2 docker-compose
- && #cryptography
+sudo pip install tornado numpy scipy pymongo pyyaml python-slugify pyexcel_ods3 xlrd python-magic requests PyJWT colorlog pyzmq jinja2 docker-compose && #cryptography
 sudo pip3 install tornado requests numpy xlrd jwt
 #sudo apt-get install virtualenv
 #sudo pip3 install --user virtualenvwrapper
