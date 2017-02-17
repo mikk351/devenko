@@ -5,6 +5,7 @@
 #sudo apt-get install atom
 
 apm install javascript-snippets &&
+apm install emmet &&
 apm install save-session &&
 apm install atom-beautify &&
 apm install highlight-selected &&
