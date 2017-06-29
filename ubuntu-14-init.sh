@@ -6,7 +6,7 @@ sudo ufw allow ssh
 
 #General 
 ####################################################################################################################
-sudo apt-get install -y fail2ban shutter xclip git tilda mc htop byobu sshfs
+sudo apt-get install -y fail2ban shutter xclip git tilda mc htop byobu sshfs fish
 sudo apt-get install -y p7zip-full unrar-free
 sudo apt-get install -y synapse vlc
 
@@ -41,8 +41,8 @@ echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sourc
 sudo apt-get update &&
 sudo apt-get install -y atom sublime-text-installer spotify-client
 
-
-
+# DEV-ENV
+####################################################################################################################
 # NodeJS 6
 sudo apt-get install -y build-essential &&
 curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash - &&
@@ -71,3 +71,31 @@ sudo mv  robomongo-1.0.0-linux-x86_64-89f24ea/* /usr/local/bin/robomongo
 sudo chmod +x /usr/local/bin/robomongo/bin/robomongo
 echo "alias robomongo='/usr/local/bin/robomongo/bin/robomongo'" >> ~/.bashrc
 source ~/.bashrc
+
+
+# Look and feel
+####################################################################################################################
+sudo apt-get install -y unity-tweak-tool plank numix-gtk-theme numix-icon-theme-circle gnome-tweak-tool &&
+gsettings set org.gnome.desktop.interface gtk-theme 'Numix' &&
+gsettings set org.gnome.desktop.interface icon-theme 'Numix-Circle' &&
+#Autostart plank
+echo '[Desktop Entry]
+Type=Application
+Exec=plank
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en_US]=plank
+Name=plank
+Comment[en_US]=
+Comment=' > /home/$USER/.config/autostart/plank.desktop
+echo '[Desktop Entry]
+Type=Application
+Exec=tilda
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en_US]=tilda
+Name=tilda
+Comment[en_US]=tilda
+Comment=tilda' > /home/$USER/.config/autostart/tilda.desktop
