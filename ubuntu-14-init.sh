@@ -99,3 +99,5 @@ Name[en_US]=tilda
 Name=tilda
 Comment[en_US]=tilda
 Comment=tilda' > /home/$USER/.config/autostart/tilda.desktop
+# use fish as deffault shell
+echo "fish" >> ~/.bashrc
