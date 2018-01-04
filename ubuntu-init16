@@ -2,10 +2,11 @@
 
 sudo adduser $USER www-data
 sudo ufw enable
+sudo ufw allow ssh
 
 #General 
 ####################################################################################################################
-sudo apt-get install -y fail2ban shutter xclip git vlc tilda mc p7zip-full unrar-free htop byobu sshfs
+sudo apt-get install -y fail2ban shutter xclip git vlc tilda mc p7zip-full unrar-free htop byobu sshfs x2x openssh-server 
 sudo snap install spotify
 
 
