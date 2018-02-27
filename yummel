@@ -16,6 +16,7 @@ dnf install -y dejavu-sans-mono-fonts google-droid-sans-mono-fonts mozilla-fira-
 #Node
 curl --silent --location https://rpm.nodesource.com/setup_8.x | sudo bash -
 sudo dnf-y install nodejs
+npm install -g nodemon @angular/cli
 
 #Mongo
 dnf -y install mongodb mongodb-server
@@ -28,6 +29,12 @@ dnf -y install docker-ce
 service docker start
 
 # SSH key
-ssh-keygen -t rsa -b 4096 -C "mikk351@gmail.com"
-ssh-add ~/.ssh/id_rsa
-eval "$(ssh-agent -s)"
+git config --global user.email "mikk351@gmail.com" &&
+git config --global user.name "mikk351" &&
+git config --global push.default simple &&
+ssh-keygen -t rsa -b 4096 -C "mikk351@gmail.com" &&
+eval "$(ssh-agent -s)" && ssh-add ~/.ssh/id_rsa &&
+chmod 600 ~/.ssh/config
+chown $USER ~/.ssh/config
+xclip -sel clip < ~/.ssh/id_rsa.pub
+
