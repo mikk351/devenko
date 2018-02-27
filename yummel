@@ -17,6 +17,9 @@ dnf install -y dejavu-sans-mono-fonts google-droid-sans-mono-fonts mozilla-fira-
 curl --silent --location https://rpm.nodesource.com/setup_8.x | sudo bash -
 sudo dnf-y install nodejs
 npm install -g nodemon @angular/cli
+#SASS https://gist.github.com/sophiekovalevsky/fffd5b40089b55539f2d
+dnf install ruby gcc mysql-devel ruby-devel rubygems redhat-rpm-config
+gem install sass bundler rails compass
 
 #Mongo
 dnf -y install mongodb mongodb-server
