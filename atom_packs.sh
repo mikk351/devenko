@@ -17,6 +17,20 @@ apm install atom-material-syntax-dark &&
 apm install seti-syntax &&
 apm install seti-ui
 
+
+echo "
+'.source.js':
+  'console.log':
+    'prefix': 'cl'
+    'body': 'console.log(\"\$1\");'
+
+'.source.ts':
+  'console.log':
+    'prefix': 'cl'
+    'body': 'console.log(\"\$1\");'    
+" > /home/$USER/.atom/snippets.cson 
+
+
 echo '{
   "html": {
     "brace_style": "collapse",
