@@ -4,6 +4,13 @@ sudo adduser $USER www-data
 sudo ufw enable
 sudo ufw allow ssh
 
+# Look and feel
+sudo add-apt-repository -y ppa:numix/ppa
+sudo apt-get install -y numix-gtk-theme numix-icon-theme-circle gnome-tweak-tool &&
+gsettings set org.gnome.desktop.interface gtk-theme 'Numix' && 
+gsettings set org.gnome.desktop.interface icon-theme 'Numix-Circle'
+
+
 #General 
 ####################################################################################################################
 sudo apt-get install -y fail2ban shutter xclip git vlc tilda mc p7zip-full unrar-free htop byobu sshfs x2x openssh-server build-essential
