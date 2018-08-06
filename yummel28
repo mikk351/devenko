@@ -1,34 +1,25 @@
 #!/bin/bash
 
-
-#ADD Repos
 #RPM Fusion
-dnf install -y https://dl.folkswithhats.org/fedora/$(rpm -E %fedora)/RPMS/folkswithhats-release.noarch.rpm
-dnf install -y https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+dnf -y install https://dl.folkswithhats.org/fedora/$(rpm -E %fedora)/RPMS/fedy-release.rpm
+dnf -y install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm 
 
 #Install
-dnf install -y mc htop git vim wget xclip plank fish gnome-tweak-tool chrome-gnome-shell
-dnf install -y fedy
+dnf install -y mc fedy htop git vim wget xclip plank fish gnome-tweak-tool chrome-gnome-shell
 
 #Fonts
 dnf install -y dejavu-sans-mono-fonts google-droid-sans-mono-fonts mozilla-fira-mono-fonts adobe-source-code-pro-fonts levien-inconsolata-fonts
 
 #Node
 curl --silent --location https://rpm.nodesource.com/setup_8.x | sudo bash -
-sudo dnf-y install nodejs
+sudo dnf -y install nodejs
 npm install -g nodemon @angular/cli
-#SASS https://gist.github.com/sophiekovalevsky/fffd5b40089b55539f2d
-dnf install ruby gcc mysql-devel ruby-devel rubygems redhat-rpm-config
-gem install sass bundler rails compass
-
-#Mongo
-dnf -y install mongodb mongodb-server
-service mongod start
 
 #Docker
 dnf -y install dnf-plugins-core
 dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
 dnf -y install docker-ce
+pip install docker-compose
 service docker start
 
 # SSH key
@@ -37,7 +28,4 @@ git config --global user.name "mikk351" &&
 git config --global push.default simple &&
 ssh-keygen -t rsa -b 4096 -C "mikk351@gmail.com" &&
 eval "$(ssh-agent -s)" && ssh-add ~/.ssh/id_rsa &&
-chmod 600 ~/.ssh/config
-chown $USER ~/.ssh/config
 xclip -sel clip < ~/.ssh/id_rsa.pub
-
