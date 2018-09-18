@@ -13,6 +13,7 @@ gsettings set org.gnome.desktop.interface icon-theme 'Numix-Circle'
 
 #General 
 ####################################################################################################################
+sudo apt-get install -y python-pip python3-pip
 sudo apt-get install -y fail2ban shutter xclip git vlc tilda mc p7zip-full unrar-free htop byobu sshfs x2x openssh-server build-essential
 
 #WGETS
@@ -38,6 +39,7 @@ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 sudo apt-key fingerprint 0EBFCD88
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 sudo apt-get update && sudo apt-get install -y docker-ce
+sudo pip install docker-compose
 
 # Node js
 curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash - &&
