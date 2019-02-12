@@ -14,7 +14,7 @@ gsettings set org.gnome.desktop.interface icon-theme 'Numix-Circle'
 #General 
 ####################################################################################################################
 sudo apt-get install -y python-pip python3-pip
-sudo apt-get install -y fail2ban shutter xclip git vlc tilda mc p7zip-full unrar-free htop byobu sshfs x2x openssh-server build-essential
+sudo apt-get install -y fail2ban shutter flameshot xclip git vlc tilda mc p7zip-full unrar-free htop byobu sshfs x2x openssh-server build-essential
 
 #WGETS
 ####################################################################################################################
