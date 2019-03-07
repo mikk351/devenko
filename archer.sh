@@ -18,6 +18,7 @@ npm config set prefix '~/.npm-global'
 
 # Add user bin to path $HOME/.local/bin
 printf '#!/bin/bash\nPATH=$PATH:$HOME/.local/bin:$HOME/.npm-global\n' | sudo tee -a /etc/profile.d/custom.sh > /dev/null
+source /etc/profile.d/custom.sh
 
 pip install --user docker-compose
 sudo npm install -g @angular/cli @vue/cli http-server
