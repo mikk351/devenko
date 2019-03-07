@@ -12,10 +12,12 @@ sudo systemctl enable pcscd && sudo systemctl start pcscd
 sudo systemctl enable docker
 sudo systemctl start docker
 
-# Install for one user
-pip install --user docker-compose
+# Local pip and npm
+mkdir ~/.npm-global
+npm config set prefix '~/.npm-global'
+
 # Add user bin to path $HOME/.local/bin
-printf '#!/bin/bash\nPATH=$PATH:$HOME/.local/bin\n' | sudo tee -a /etc/profile.d/custom.sh > /dev/null
+printf '#!/bin/bash\nPATH=$PATH:$HOME/.local/bin:$HOME/.npm-global\n' | sudo tee -a /etc/profile.d/custom.sh > /dev/null
 
-
+pip install --user docker-compose
 sudo npm install -g @angular/cli @vue/cli http-server
