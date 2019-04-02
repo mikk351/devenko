@@ -22,5 +22,9 @@ npm config set prefix '~/.npm-global'
 printf '#!/bin/bash\nPATH=$PATH:$HOME/.local/bin:$HOME/.npm-global\n' | sudo tee -a /etc/profile.d/custom.sh > /dev/null
 source /etc/profile.d/custom.sh
 
+# For fish
+#printf '\nset -gx PATH $PATH:$HOME/.local/bin:$HOME/.npm-global/bin\n' | tee -a ~/.config/fish/config.fish > /dev/null
+
+
 pip install --user docker-compose
 sudo npm install -g @angular/cli @vue/cli http-server
