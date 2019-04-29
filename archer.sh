@@ -21,6 +21,7 @@ npm config set prefix '~/.npm-global'
 # Add user bin to path $HOME/.local/bin
 printf '#!/bin/bash\nPATH=$PATH:$HOME/.local/bin:$HOME/.npm-global\n' | sudo tee -a /etc/profile.d/custom.sh > /dev/null
 source /etc/profile.d/custom.sh
+# sudo chmod a+x /etc/profile.d/ # ubuntus
 
 # For fish
 #printf '\nset -gx PATH $PATH:$HOME/.local/bin:$HOME/.npm-global/bin\n' | tee -a ~/.config/fish/config.fish > /dev/null
