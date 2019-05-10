@@ -28,4 +28,4 @@ sudo chmod a+x /etc/profile.d/
 # rm ~/.config/autostart/create-template.desktop # generates empty files
 
 pip install --user docker-compose
-sudo npm install -g @angular/cli @vue/cli http-server
+npm install -g @angular/cli @vue/cli http-server
