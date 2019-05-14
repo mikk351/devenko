@@ -27,5 +27,8 @@ sudo chmod a+x /etc/profile.d/
 #printf '\nset -gx PATH $PATH:$HOME/.local/bin:$HOME/.npm-global/bin\n' | tee -a ~/.config/fish/config.fish > /dev/null
 # rm ~/.config/autostart/create-template.desktop # generates empty files
 
+# Hide items
+echo snap >> ~/.hidden
+
 pip install --user docker-compose
 npm install -g @angular/cli @vue/cli http-server
