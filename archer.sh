@@ -1,10 +1,13 @@
-sudo pacman -S chromium flameshot code atom docker nodejs npm yaourt xclip python-pip fish --noconfirm
+sudo pacman -S chromium flameshot code docker nodejs npm python-pip fish --noconfirm
 
 chsh -s /usr/bin/fish # Set deffault shell
 
 # install? flatpak
-yaourt -S spotify sublime-text-dev --noconfirm
+#yaourt -S spotify sublime-text-dev --noconfirm
 #yaourt -S pulseaudio-dlna --noconfirm
+
+# drawing
+#flatpak install flathub com.github.maoschanz.drawing
 
 # SmartCard
 yaourt -S qdigidoc4 chrome-token-signing --noconfirm
