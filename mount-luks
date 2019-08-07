@@ -1,0 +1,17 @@
+# How to mount luks drive as home folder ubuntu
+
+# List drives, get luks name and UUID
+lsblk --fs
+
+Modify 2 files:
+
+/etc/fstab
+	/dev/mapper/crypto_LUKS                   /home          ext4    defaults,noatime 0 2
+	
+
+/etc/crypttab
+	crypto_LUKS UUID=211b9919-7c7b-4c31-b39c-6e8a13678990 none luks,discard,nofail
+
+
+Where:
+  crypto_LUKS - drive name
