@@ -4,34 +4,29 @@ sudo adduser $USER www-data
 sudo ufw enable
 sudo ufw allow ssh
 
-# Look and feel
-sudo add-apt-repository -y ppa:numix/ppa
-sudo apt-get install -y numix-gtk-theme numix-icon-theme-circle gnome-tweak-tool &&
-gsettings set org.gnome.desktop.interface gtk-theme 'Numix' && 
-gsettings set org.gnome.desktop.interface icon-theme 'Numix-Circle'
-
 
 #General 
 ####################################################################################################################
+sudo apt-get update
 sudo apt-get install -y python-pip python3-pip
-sudo apt-get install -y fail2ban shutter flameshot xclip git vlc tilda mc p7zip-full unrar-free htop byobu sshfs x2x openssh-server build-essential
+sudo apt-get install -y chromium-browser fail2ban shutter flameshot xclip git vlc tilda mc p7zip-full unrar-free htop byobu sshfs x2x openssh-server build-essential
 
-#WGETS
-####################################################################################################################
-#Install ID card
-wget https://installer.id.ee/media/install-scripts/install-open-eid.sh &&
-chmod +x install-open-eid.sh &&
-./install-open-eid.sh &&
-rm install-open-eid.sh
 
-#Google chrome
-wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb &&
-sudo dpkg -i --force-depends google-chrome-stable_current_amd64.deb &&
-rm google-chrome-stable_current_amd64.deb &&
-sudo apt-get -f install
+# FLAT HUB
+# ----------------------------------------------------------------------------------
+read -t 3 -p "Install flatpak and flathub? [y/n]" -n 1 -r
+echo    #new line
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+	sudo apt install -y flathub gnome-software-plugin-flatpak
+	sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
-# Develop
-####################################################################################################################
+	flatpak install flathub com.github.maoschanz.drawing
+fi
+
+
+# DEVELOP
+# ----------------------------------------------------------------------------------
 # Docker
 sudo apt-get remove docker docker-engine docker.io
 sudo apt-get install apt-transport-https ca-certificates curl software-properties-common
@@ -42,37 +37,92 @@ sudo apt-get update && sudo apt-get install -y docker-ce
 sudo pip install docker-compose
 
 # Node js
-curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash - &&
+curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash - &&
 sudo apt-get update && sudo apt-get install -y nodejs
 
-sudo chown -R $USER:$GROUP ~/.npm
-sudo chown -R $USER:$GROUP ~/.config
+npm install -g @angular/cli @vue/cli http-server
 
-npm install -g @angular/cli
+# Local pip and npm installs
+# ----------------------------------------------------------------------------------
+mkdir ~/.npm-global
+npm config set prefix '~/.npm-global'
 
+# Add user bin to path $HOME/.local/bin
+printf '#!/bin/bash\nPATH=$PATH:$HOME/.local/bin:$HOME/.npm-global/bin\n' | sudo tee -a /etc/profile.d/custom.sh > /dev/null
+source /etc/profile.d/custom.sh
+sudo chmod a+x /etc/profile.d/  
+
+
+# FISH
+# ----------------------------------------------------------------------------------
+sudo chsh -s /usr/bin/fish # Set deffault shell
+printf '\nset -gx PATH $PATH:$HOME/.local/bin:$HOME/.npm-global/bin\n' | tee -a ~/.config/fish/config.fish > /dev/null
+
+rm ~/.config/autostart/create-template.desktop # generates empty files
+
+
+# Hide items
+# ----------------------------------------------------------------------------------
+echo snap >> ~/.hidden
+
+
+
+# CODE EDIT
+# ----------------------------------------------------------------------------------
 # VS code
 curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
 sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
 sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
-
-# ATOM
-curl -sL https://packagecloud.io/AtomEditor/atom/gpgkey | sudo apt-key add -
-sudo sh -c 'echo "deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main" > /etc/apt/sources.list.d/atom.list'
 
 # Subl3
 wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
 echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
 
 sudo apt-get update
-sudo apt-get install -y sublime-text code atom
+sudo apt-get install -y sublime-text code
 
-#Set up git and clone repos
-####################################################################################################################
-git config --global user.email "mikk351@gmail.com" &&
-git config --global user.name "mikk351" &&
-git config --global push.default simple &&
-ssh-keygen -t rsa -b 4096 -C "mikk351@gmail.com" &&
-eval "$(ssh-agent -s)" && ssh-add ~/.ssh/id_rsa &&
-xclip -sel clip < ~/.ssh/id_rsa.pub
+# CONF FILES
+# ----------------------------------------------------------------------------------
+wget https://raw.githubusercontent.com/mikk351/devenko/master/keybindings.json -O ~/.config/Code/User/keybindings.json
 
-read -rsp $'SSH key copied to clipboard. Add it to github and press any key to continue. \n' -n1 key
+
+
+# OPTIONAL
+# ----------------------------------------------------------------------------------
+
+#Install ID card
+read -t 3 -p "Install EST ID-card ? [y/n]" -n 1 -r
+echo    #new line
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+	wget https://installer.id.ee/media/install-scripts/install-open-eid.sh &&
+	chmod +x install-open-eid.sh &&
+	./install-open-eid.sh &&
+	rm install-open-eid.sh
+fi
+
+#Google chrome
+read -t 3 -p "Install Google chrome? [y/n]" -n 1 -r
+echo    #new line
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+	wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb &&
+	sudo dpkg -i --force-depends google-chrome-stable_current_amd64.deb &&
+	rm google-chrome-stable_current_amd64.deb &&
+	sudo apt-get -f install
+fi
+
+
+# KEY
+# ----------------------------------------------------------------------------------
+read -t 3 -p "Generate SSH keys? [y/n]" -n 1 -r
+echo    #new line
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+	git config --global user.email "mikk351@gmail.com" &&
+	git config --global user.name "mikkk" &&
+	git config --global push.default simple &&
+	ssh-keygen -t rsa -b 4096 -C "mikk351@gmail.com" &&
+	eval "$(ssh-agent -s)" && ssh-add ~/.ssh/id_rsa &&
+	xclip -sel clip < ~/.ssh/id_rsa.pub
+fi
