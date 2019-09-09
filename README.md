@@ -25,3 +25,10 @@ phantomJS font problems:
 ubuntu laggy bluetooth mouse
 	
 	echo "options iwlwifi bt_coex_active=0" | sudo tee /etc/modprobe.d/iwlopt.conf
+
+
+Ubuntu x1 Carbon gen5 scrolling fix
+
+	/etc/default/grub
+	
+	GRUB_CMDLINE_LINUX_DEFAULT="quiet splash psmouse.synaptics_intertouch=0"
