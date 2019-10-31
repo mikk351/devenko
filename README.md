@@ -32,3 +32,8 @@ Ubuntu x1 Carbon gen5 scrolling fix
 	/etc/default/grub
 	
 	GRUB_CMDLINE_LINUX_DEFAULT="quiet splash psmouse.synaptics_intertouch=0"
+
+
+Update
+
+	fwupdmgr refresh && fwupdmgr update
