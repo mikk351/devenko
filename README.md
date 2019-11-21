@@ -1,4 +1,4 @@
-# devEnvConf
+# All the random stuff
   
 General
 
@@ -37,3 +37,7 @@ Ubuntu x1 Carbon gen5 scrolling fix
 Update
 
 	fwupdmgr refresh && fwupdmgr update
+	
+MS mouse scrolling fix
+
+	https://sourceforge.net/projects/resetmsmice/
