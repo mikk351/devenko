@@ -1,4 +1,4 @@
-sudo pacman -S chromium flameshot code docker nodejs npm python-pip fish --noconfirm
+sudo pacman -S chromium flameshot code docker docker-compose nodejs npm python-pip fish --noconfirm
 
 chsh -s /usr/bin/fish # Set deffault shell
 
