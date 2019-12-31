@@ -1,17 +1,28 @@
-sudo pacman -S chromium flameshot code docker docker-compose nodejs npm python-pip fish --noconfirm
+sudo pacman -S chromium flameshot code docker docker-compose nodejs npm python-pip fish fzf --noconfirm
+
+sudo systemctl enable docker
+sudo systemctl start docker
 
 chsh -s /usr/bin/fish # Set deffault shell
 
+# Pikaur
+sudo pacman -S --needed base-devel git
+git clone https://aur.archlinux.org/pikaur.git
+cd pikaur
+makepkg -fsri
+cd ..
+rm -R pikaur
+
 # install? flatpak
-#yaourt -S spotify sublime-text-dev --noconfirm
-#yaourt -S pulseaudio-dlna --noconfirm
+#pikaur -S spotify sublime-text-dev --noconfirm
+#pikaur -S pulseaudio-dlna --noconfirm
 
 # drawing
 #flatpak install flathub com.github.maoschanz.drawing
 
 # SmartCard
-yaourt -S qdigidoc4 chrome-token-signing --noconfirm
-sudo systemctl enable pcscd && sudo systemctl start pcscd
+#pikaur -S qdigidoc4 chrome-token-signing --noconfirm
+#sudo systemctl enable pcscd && sudo systemctl start pcscd
 
 
 sudo systemctl enable docker
