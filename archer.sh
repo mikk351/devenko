@@ -1,4 +1,5 @@
-sudo pacman -S chromium flameshot code docker docker-compose nodejs npm python-pip fish fzf --noconfirm
+sudo pacman -Sy chromium flameshot code docker docker-compose nodejs npm python-pip fish fzf --noconfirm
+sudo pacman -Sy base-devel
 
 sudo systemctl enable docker
 sudo systemctl start docker
