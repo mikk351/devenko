@@ -9,7 +9,12 @@ sudo ufw allow ssh
 ####################################################################################################################
 sudo apt-get update
 sudo apt-get install -y python-pip python3-pip
-sudo apt-get install -y chromium-browser fail2ban shutter flameshot xclip git vlc tilda mc p7zip-full unrar-free htop byobu sshfs x2x openssh-server build-essential
+sudo apt-get install -y chromium-browser fail2ban flameshot xclip git vlc tilda mc p7zip-full unrar-free htop byobu sshfs x2x openssh-server build-essential
+
+# Spotify
+curl -sS https://download.spotify.com/debian/pubkey.gpg | sudo apt-key add - 
+echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
+sudo apt-get update && sudo apt-get install spotify-client
 
 
 # FLAT HUB
@@ -36,22 +41,29 @@ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubun
 sudo apt-get update && sudo apt-get install -y docker-ce
 sudo pip install docker-compose
 
+sudo usermod -G docker -a $USER
+
 # Node js
-curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash - &&
+curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash - &&
 sudo apt-get update && sudo apt-get install -y nodejs
 npm config set ignore-scripts true
 
-npm install -g @angular/cli @vue/cli http-server
+
 
 # Local pip and npm installs
 # ----------------------------------------------------------------------------------
 mkdir ~/.npm-global
 npm config set prefix '~/.npm-global'
 
+
+
 # Add user bin to path $HOME/.local/bin
 printf '#!/bin/bash\nPATH=$PATH:$HOME/.local/bin:$HOME/.npm-global/bin\n' | sudo tee -a /etc/profile.d/custom.sh > /dev/null
 source /etc/profile.d/custom.sh
 sudo chmod a+x /etc/profile.d/  
+
+
+npm install -g @angular/cli http-server
 
 
 # FISH
