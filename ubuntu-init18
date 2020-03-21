@@ -9,7 +9,7 @@ sudo ufw allow ssh
 ####################################################################################################################
 sudo apt-get update
 sudo apt-get install -y python-pip python3-pip
-sudo apt-get install -y chromium-browser fail2ban flameshot xclip git vlc tilda mc p7zip-full unrar-free htop byobu sshfs x2x openssh-server build-essential
+sudo apt-get install -y chromium-browser fail2ban flameshot xclip git vlc tilda mc p7zip-full unrar-free htop byobu sshfs x2x openssh-server build-essential fish
 
 # Spotify
 curl -sS https://download.spotify.com/debian/pubkey.gpg | sudo apt-key add - 
