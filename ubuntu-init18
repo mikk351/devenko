@@ -69,7 +69,7 @@ npm install -g @angular/cli http-server
 # FISH
 # ----------------------------------------------------------------------------------
 sudo chsh -s /usr/bin/fish # Set deffault shell
-printf '\nset -gx PATH $PATH:$HOME/.local/bin:$HOME/.npm-global/bin\n' | tee -a ~/.config/fish/config.fish > /dev/null
+printf '\nset -gx PATH $PATH $HOME/.local/bin $HOME/.npm-global/bin\nset fish_greeting' | tee -a ~/.config/fish/config.fish > /dev/null
 
 rm ~/.config/autostart/create-template.desktop # generates empty files
 
