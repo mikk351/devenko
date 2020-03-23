@@ -19,7 +19,7 @@ sudo apt-get update && sudo apt-get install spotify-client
 
 # FLAT HUB
 # ----------------------------------------------------------------------------------
-read -t 3 -p "Install flatpak and flathub? [y/n]" -n 1 -r
+read -t 5 -p "Install flatpak and flathub? [y/n]" -n 1 -r
 echo    #new line
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
@@ -29,6 +29,13 @@ then
 	flatpak install flathub com.github.maoschanz.drawing
 fi
 
+
+read -t 5 -p "Add VPN client? [y/n]" -n 1 -r
+echo    #new line
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+	sudo apt install network-manager-openvpn-gnome openvpn-systemd-resolved
+fi
 
 # DEVELOP
 # ----------------------------------------------------------------------------------
@@ -104,7 +111,7 @@ wget https://raw.githubusercontent.com/mikk351/devenko/master/keybindings.json -
 # ----------------------------------------------------------------------------------
 
 #Install ID card
-read -t 3 -p "Install EST ID-card ? [y/n]" -n 1 -r
+read -t 5 -p "Install EST ID-card ? [y/n]" -n 1 -r
 echo    #new line
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
@@ -115,7 +122,7 @@ then
 fi
 
 #Google chrome
-read -t 3 -p "Install Google chrome? [y/n]" -n 1 -r
+read -t 5 -p "Install Google chrome? [y/n]" -n 1 -r
 echo    #new line
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
@@ -128,7 +135,7 @@ fi
 
 # KEY
 # ----------------------------------------------------------------------------------
-read -t 3 -p "Generate SSH keys? [y/n]" -n 1 -r
+read -t 5 -p "Generate SSH keys? [y/n]" -n 1 -r
 echo    #new line
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
