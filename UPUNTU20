@@ -1,0 +1,115 @@
+#!/bin/bash
+
+sudo adduser $USER www-data
+sudo ufw enable
+sudo ufw allow ssh
+
+
+#General 
+####################################################################################################################
+sudo apt-get update
+sudo apt-get install -y python3-pip
+sudo apt-get install -y fail2ban flameshot xclip git vlc tilda mc p7zip-full unrar-free htop byobu sshfs x2x openssh-server build-essential fish smbclient curl
+
+# PIP and PIP3
+sudo update-alternatives --install /usr/bin/pip pip /usr/bin/pip3 1
+
+sudo snap install spotify chromium-browser drawing
+
+sudo snap install codium sublime-text --classic
+
+read -t 5 -p "Add VPN client? [y/n]" -n 1 -r
+echo    #new line
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+	sudo apt install network-manager-openvpn-gnome openvpn-systemd-resolved
+fi
+
+# DEVELOP
+# ----------------------------------------------------------------------------------
+# Docker
+sudo apt install docker.io
+sudo pip install docker-compose
+sudo usermod -G docker -a $USER
+
+# Node js
+curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash - &&
+sudo apt-get update && sudo apt-get install -y nodejs
+
+
+
+# Local pip and npm installs
+# ----------------------------------------------------------------------------------
+npm config set ignore-scripts true
+mkdir ~/.npm-global
+npm config set prefix '~/.npm-global'
+
+
+
+# Add user bin to path $HOME/.local/bin
+printf '#!/bin/bash\nPATH=$PATH:$HOME/.local/bin:$HOME/.npm-global/bin\n' | sudo tee -a /etc/profile.d/custom.sh > /dev/null
+source /etc/profile.d/custom.sh
+sudo chmod a+x /etc/profile.d/  
+
+
+npm install -g @angular/cli http-server
+
+
+# FISH
+# ----------------------------------------------------------------------------------
+sudo chsh -s /usr/bin/fish # Set deffault shell
+printf '\nset -gx PATH $PATH $HOME/.local/bin $HOME/.npm-global/bin\nset fish_greeting' | tee -a ~/.config/fish/config.fish > /dev/null
+
+rm ~/.config/autostart/create-template.desktop # generates empty files
+
+
+# Hide items
+# ----------------------------------------------------------------------------------
+echo snap >> ~/.hidden
+
+
+# CONF FILES
+# ----------------------------------------------------------------------------------
+wget https://raw.githubusercontent.com/mikk351/devenko/master/keybindings.json -O ~/.config/VSCodium/User/keybindings.json
+
+
+
+# OPTIONAL
+# ----------------------------------------------------------------------------------
+
+#Install ID card
+read -t 5 -p "Install EST ID-card ? [y/n]" -n 1 -r
+echo    #new line
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+	wget https://installer.id.ee/media/install-scripts/install-open-eid.sh &&
+	chmod +x install-open-eid.sh &&
+	./install-open-eid.sh &&
+	rm install-open-eid.sh
+fi
+
+#Google chrome
+read -t 5 -p "Install Google chrome? [y/n]" -n 1 -r
+echo    #new line
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+	wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb &&
+	sudo dpkg -i --force-depends google-chrome-stable_current_amd64.deb &&
+	rm google-chrome-stable_current_amd64.deb &&
+	sudo apt-get -f install
+fi
+
+
+# KEY
+# ----------------------------------------------------------------------------------
+read -t 5 -p "Generate SSH keys? [y/n]" -n 1 -r
+echo    #new line
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+	git config --global user.email "mikk351@gmail.com" &&
+	git config --global user.name "mikkk" &&
+	git config --global push.default simple &&
+	ssh-keygen -t rsa -b 4096 -C "mikk351@gmail.com" &&
+	eval "$(ssh-agent -s)" && ssh-add ~/.ssh/id_rsa &&
+	xclip -sel clip < ~/.ssh/id_rsa.pub
+fi
