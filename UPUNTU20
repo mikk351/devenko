@@ -52,7 +52,7 @@ source /etc/profile.d/custom.sh
 sudo chmod a+x /etc/profile.d/  
 
 
-npm install -g @angular/cli http-server
+npm install -g @angular/cli firebase-tools http-server
 
 
 # FISH
