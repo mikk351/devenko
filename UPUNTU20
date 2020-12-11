@@ -32,6 +32,8 @@ sudo apt install docker.io
 sudo pip install docker-compose
 sudo usermod -G docker -a $USER
 
+pip install glances
+
 # Node js
 curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash - &&
 sudo apt-get update && sudo apt-get install -y nodejs
