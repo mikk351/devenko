@@ -1,4 +1,5 @@
-sudo pacman -Sy chromium flameshot code docker docker-compose nodejs npm python-pip fish fzf peek --noconfirm
+sudo pacman -Sy smbclient flatpak flameshot code docker docker-compose python-pip fish fzf peek --noconfirm
+#sudo pacman -Sy nodejs npm
 sudo pacman -Sy base-devel
 
 sudo systemctl enable docker
@@ -24,10 +25,6 @@ rm -R pikaur
 # SmartCard
 #pikaur -S qdigidoc4 chrome-token-signing --noconfirm
 #sudo systemctl enable pcscd && sudo systemctl start pcscd
-
-
-sudo systemctl enable docker
-sudo systemctl start docker
 
 # Local pip and npm
 mkdir ~/.npm-global
