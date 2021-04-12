@@ -2,6 +2,9 @@ sudo pacman -Sy smbclient flatpak flameshot code docker docker-compose python-pi
 #sudo pacman -Sy nodejs npm
 sudo pacman -Sy base-devel
 
+sudo pacman -R evolution-data-server folks gnome-maps gnome-contacts
+
+
 sudo systemctl enable docker
 sudo systemctl start docker
 
