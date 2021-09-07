@@ -1,4 +1,5 @@
 sudo pacman -Sy smbclient flatpak flameshot code docker docker-compose python-pip fish fzf peek --noconfirm
+sudo pacman -S cups splix system-config-printer
 #sudo pacman -Sy nodejs npm
 sudo pacman -Sy base-devel
 
