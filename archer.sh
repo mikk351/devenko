@@ -47,4 +47,4 @@ sudo chmod a+x /etc/profile.d/
 echo snap >> ~/.hidden
 
 pip install --user docker-compose
-npm install -g @angular/cli @vue/cli http-server
+npm install -g @angular/cli @vue/cli http-server firebase-tools
