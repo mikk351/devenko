@@ -35,7 +35,7 @@ sudo usermod -G docker -a $USER
 pip install glances
 
 # Node js
-curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash - &&
+curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash - &&
 sudo apt-get update && sudo apt-get install -y nodejs
 
 
@@ -65,11 +65,20 @@ curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyr
 sudo apt-get update && sudo apt-get install google-cloud-sdk openjdk-11-jdk-headless
 
 
-
+# VS codium
+# ----------------------------------------------------------------------------------
+wget -qO - https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg \
+    | gpg --dearmor \
+    | sudo dd of=/usr/share/keyrings/vscodium-archive-keyring.gpg
+echo 'deb [ signed-by=/usr/share/keyrings/vscodium-archive-keyring.gpg ] https://download.vscodium.com/debs vscodium main' \
+    | sudo tee /etc/apt/sources.list.d/vscodium.list
+sudo apt update && sudo apt install codium
+    
+    
 # FISH
 # ----------------------------------------------------------------------------------
 sudo chsh -s /usr/bin/fish # Set deffault shell
-printf '\nset -gx PATH $PATH $HOME/.local/bin $HOME/.npm-global/bin\nset fish_greeting' | tee -a ~/.config/fish/config.fish > /dev/null
+printf '\nset -gx PATH $PATH $HOME/.local/bin $HOME/.npm-global/bin \nset fish_greeting \nalias -s code=codium' | tee -a ~/.config/fish/config.fish > /dev/null
 
 rm ~/.config/autostart/create-template.desktop # generates empty files
 
