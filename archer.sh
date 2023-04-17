@@ -42,6 +42,8 @@ sudo chmod a+x /etc/profile.d/
 # For fish
 #printf '\nset -gx PATH $PATH:$HOME/.local/bin:$HOME/.npm-global/bin\n' | tee -a ~/.config/fish/config.fish > /dev/null
 # rm ~/.config/autostart/create-template.desktop # generates empty files
+#fish_add_path $HOME/.npm-global/bin
+#fish_add_path $HOME/.local/bin
 
 # Hide items
 echo snap >> ~/.hidden
