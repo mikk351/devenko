@@ -1,0 +1,19 @@
+dconf write /org/gnome/desktop/wm/keybindings/switch-to-workspace-left "['<Alt><Control>Left']"
+dconf write /org/gnome/desktop/wm/keybindings/switch-to-workspace-right "['<Alt><Control>Right']"
+dconf write /org/gnome/desktop/wm/keybindings/move-to-workspace-left "['<Shift><Ctrl><Alt>Left']"
+dconf write /org/gnome/desktop/wm/keybindings/move-to-workspace-right "['<Shift><Ctrl><Alt>Right']"
+
+dconf write /org/gnome/desktop/wm/keybindings/switch-windows "['<Alt>Tab']"
+
+
+#dconf dump /org/gnome/desktop/wm/keybindings/ > gnome-keys.conf
+
+# Add termial shortcut
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ binding "<Primary><Alt>t" &&
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ command "gnome-terminal" &&
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ name "gnome-terminal"
+
+# Add flameshot shortcut
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/ binding "<Super>s" &&
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/ command "flameshot gui" &&
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/ name "flameshot gui"
