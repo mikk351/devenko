@@ -3,6 +3,9 @@ sudo pacman -S cups splix system-config-printer
 #sudo pacman -Sy nodejs npm
 sudo pacman -Sy base-devel
 
+# VPN
+sudo pacman -S networkmanager-openvpn  openvpn
+
 sudo pacman -R evolution-data-server folks gnome-maps gnome-contacts
 
 
