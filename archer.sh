@@ -1,13 +1,13 @@
 sudo pacman -Sy smbclient flatpak flameshot code docker docker-compose python-pip fish fzf peek cifs-utils --noconfirm
-sudo pacman -S cups splix system-config-printer
-#sudo pacman -Sy nodejs npm
-sudo pacman -Sy base-devel
+sudo pacman -Sy cups splix system-config-printer --noconfirm
+sudo pacman -Sy nodejs npm --noconfirm
+sudo pacman -Sy base-devel --noconfirm
 
 # VPN
-sudo pacman -S networkmanager-openvpn  openvpn
+#sudo pacman -S networkmanager-openvpn  openvpn
 
-sudo pacman -R evolution-data-server folks gnome-maps gnome-contacts
-
+#sudo pacman -R evolution-data-server folks gnome-maps gnome-contacts
+sudo usermod -G docker -a $USER
 
 sudo systemctl enable docker
 sudo systemctl start docker
@@ -34,8 +34,10 @@ rm -R pikaur
 #sudo systemctl enable pcscd && sudo systemctl start pcscd
 
 # Local pip and npm
+
 mkdir ~/.npm-global
 npm config set prefix '~/.npm-global'
+
 
 # Add user bin to path $HOME/.local/bin
 printf '#!/bin/bash\nPATH=$PATH:$HOME/.local/bin:$HOME/.npm-global/bin\n' | sudo tee -a /etc/profile.d/custom.sh > /dev/null
