@@ -12,8 +12,6 @@ sudo usermod -G docker -a $USER
 sudo systemctl enable docker
 sudo systemctl start docker
 
-chsh -s /usr/bin/fish # Set deffault shell
-
 # install? flatpak
 #pikaur -S spotify sublime-text-dev --noconfirm
 #pikaur -S pulseaudio-dlna --noconfirm
@@ -30,16 +28,14 @@ chsh -s /usr/bin/fish # Set deffault shell
 mkdir ~/.npm-global
 npm config set prefix '~/.npm-global'
 
-
 # Add user bin to path $HOME/.local/bin
 printf '#!/bin/bash\nPATH=$PATH:$HOME/.local/bin:$HOME/.npm-global/bin\n' | sudo tee -a /etc/profile.d/custom.sh > /dev/null
 source /etc/profile.d/custom.sh
 sudo chmod a+x /etc/profile.d/  
 
 
-
 pip install --user docker-compose
-npm install -g @angular/cli @vue/cli http-server firebase-tools
+npm install -g @angular/cli @vue/cli http-server #firebase-tools
 
 
 # Pikaur
@@ -51,5 +47,25 @@ cd ..
 rm -R pikaur
 
 # For fish
+
+chsh -s /usr/bin/fish # Set deffault shell
+fish
 fish_add_path $HOME/.npm-global/bin
 fish_add_path $HOME/.local/bin
+
+
+read -t 5 -p "Install asus ROG G16? [y/n]" -n 1 -r
+echo    #new line
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+  # asusctl
+  pikaur -S asusctl supergfxctl rog-control-center
+fi
+
+
+### Asus stuff
+: '
+sudo vim /etc/default/grub
+GRUB BOOT PARAM> i915.enable_dpcd_backlight=1 nvidia.NVreg_EnableBacklightHandler=0 nvidia.NVreg_RegistryDwords=EnableBrightnessControl=0
+grub-mkconfig -o /boot/grub/grub.cfg
+'
