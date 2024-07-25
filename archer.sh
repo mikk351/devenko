@@ -74,3 +74,4 @@ grub-mkconfig -o /boot/grub/grub.cfg
 
 
 # chmod 400 ~/.ssh/id_rsa
+# sudo mkinitcpio -p linux
