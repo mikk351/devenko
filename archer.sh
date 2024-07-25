@@ -35,7 +35,7 @@ sudo chmod a+x /etc/profile.d/
 
 
 pip install --user docker-compose
-npm install -g @angular/cli @vue/cli http-server #firebase-tools
+npm install -g @angular/cli nodemon http-server #firebase-tools @vue/cli
 
 
 # Pikaur
@@ -70,3 +70,6 @@ sudo vim /etc/default/grub
 GRUB BOOT PARAM> i915.enable_dpcd_backlight=1 nvidia.NVreg_EnableBacklightHandler=0 nvidia.NVreg_RegistryDwords=EnableBrightnessControl=0
 grub-mkconfig -o /boot/grub/grub.cfg
 '
+
+
+# chmod 400 ~/.ssh/id_rsa
