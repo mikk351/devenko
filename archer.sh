@@ -53,6 +53,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]
 then
   # asusctl
   pikaur -S asusctl supergfxctl rog-control-center
+  sudo systemctl enable supergfxd
 fi
 
 # For fish
