@@ -1,5 +1,5 @@
-sudo pacman -Sy smbclient flatpak flameshot code docker docker-compose python-pip fish fzf peek cifs-utils --noconfirm
-sudo pacman -Sy cups splix system-config-printer --noconfirm
+sudo pacman -Sy smbclient flatpak code docker docker-compose python-pip fish fzf cifs-utils --noconfirm
+#sudo pacman -Sy cups splix system-config-printer --noconfirm
 sudo pacman -Sy nodejs npm --noconfirm
 sudo pacman -Sy base-devel --noconfirm
 
@@ -13,14 +13,6 @@ sudo systemctl enable docker
 sudo systemctl start docker
 
 chsh -s /usr/bin/fish # Set deffault shell
-
-# Pikaur
-sudo pacman -S --needed base-devel git
-git clone https://aur.archlinux.org/pikaur.git
-cd pikaur
-makepkg -fsri
-cd ..
-rm -R pikaur
 
 # install? flatpak
 #pikaur -S spotify sublime-text-dev --noconfirm
@@ -44,14 +36,20 @@ printf '#!/bin/bash\nPATH=$PATH:$HOME/.local/bin:$HOME/.npm-global/bin\n' | sudo
 source /etc/profile.d/custom.sh
 sudo chmod a+x /etc/profile.d/  
 
-# For fish
-#printf '\nset -gx PATH $PATH:$HOME/.local/bin:$HOME/.npm-global/bin\n' | tee -a ~/.config/fish/config.fish > /dev/null
-# rm ~/.config/autostart/create-template.desktop # generates empty files
-#fish_add_path $HOME/.npm-global/bin
-#fish_add_path $HOME/.local/bin
 
-# Hide items
-echo snap >> ~/.hidden
 
 pip install --user docker-compose
 npm install -g @angular/cli @vue/cli http-server firebase-tools
+
+
+# Pikaur
+sudo pacman -Sy --needed base-devel git --noconfirm
+git clone https://aur.archlinux.org/pikaur.git
+cd pikaur
+makepkg -fsri
+cd ..
+rm -R pikaur
+
+# For fish
+fish_add_path $HOME/.npm-global/bin
+fish_add_path $HOME/.local/bin
