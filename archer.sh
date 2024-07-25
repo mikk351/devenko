@@ -46,13 +46,6 @@ makepkg -fsri
 cd ..
 rm -R pikaur
 
-# For fish
-
-chsh -s /usr/bin/fish # Set deffault shell
-fish
-fish_add_path $HOME/.npm-global/bin
-fish_add_path $HOME/.local/bin
-
 
 read -t 5 -p "Install asus ROG G16? [y/n]" -n 1 -r
 echo    #new line
@@ -61,6 +54,14 @@ then
   # asusctl
   pikaur -S asusctl supergfxctl rog-control-center
 fi
+
+# For fish
+chsh -s /usr/bin/fish # Set deffault shell
+
+echo "Dont forget to add FIHS paths!"
+#fish_add_path $HOME/.npm-global/bin
+#fish_add_path $HOME/.local/bin
+
 
 
 ### Asus stuff
