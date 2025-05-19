@@ -1,0 +1,34 @@
+#!/bin/bash
+
+#Install
+sudo dnf update
+sudo dnf install -y htop git vim wget fish gnome-tweak-tool file-roller
+
+#DEV
+sudo dnf -y install nodejs
+mkdir ~/.npm-global
+npm config set prefix '~/.npm-global'
+npm install -g nodemon @angular/cli http-server
+
+sudo dnf -y install dnf-plugins-core
+sudo dnf-3 config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
+sudo dnf install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+sudo systemctl enable --now docker
+
+
+printf '#!/bin/bash\nPATH=$PATH:$HOME/.local/bin:$HOME/.npm-global/bin\n' | sudo tee -a /etc/profile.d/custom.sh > /dev/null
+source /etc/profile.d/custom.sh
+sudo chmod a+x /etc/profile.d/  
+
+
+chsh -s /usr/bin/fish # Set deffault shell
+echo "Dont forget to add FIHS paths!"
+
+
+fish -c fish_add_path $HOME/.npm-global/bin
+fish -c fish_add_path $HOME/.local/bin
+
+if [ "$DESKTOP_SESSION" = "gnome" ]
+then
+  echo 'ei ole veel pannud'
+fi
