@@ -2,7 +2,7 @@
 
 #Install
 sudo dnf update
-sudo dnf install -y htop git vim wget fish gnome-tweak-tool file-roller
+sudo dnf install -y htop git vim wget fish
 
 #DEV
 sudo dnf -y install nodejs
@@ -29,6 +29,9 @@ fish -c fish_add_path $HOME/.npm-global/bin
 fish -c fish_add_path $HOME/.local/bin
 
 if [ "$DESKTOP_SESSION" = "gnome" ]
+  sudo dnf install -y gnome-tweak-tool file-roller # peaks lisama ka gnome extention manager
 then
-  echo 'ei ole veel pannud'
+  echo 'done'
 fi
+
+flatpak install flathub com.vscodium.codium
