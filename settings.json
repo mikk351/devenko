@@ -1,0 +1,5 @@
+{
+    "typescript.useCodeSnippetsOnMethodSuggest": true,
+    "editor.snippetSuggestions": "top",
+    "editor.tabCompletion": true
+}
